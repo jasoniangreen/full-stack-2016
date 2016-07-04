@@ -1,0 +1,28 @@
+{
+  "name": "full-stack-2016",
+  "version": "1.0.0",
+  "description": "Code examples for my talk for FullStack 2016 in London, \"JSON Schema: More than just data validation\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasoniangreen/full-stack-2016.git"
+  },
+  "keywords": [
+    "fullstackcon",
+    "fullstack",
+    "json-schema"
+  ],
+  "author": "Jason Green",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/jasoniangreen/full-stack-2016/issues"
+  },
+  "homepage": "https://github.com/jasoniangreen/full-stack-2016#readme",
+  "dependencies": {
+    "ajv": "^4.1.5",
+    "json-schema-faker": "^0.3.3",
+    "request-promise": "^3.0.0"
+  }
+}

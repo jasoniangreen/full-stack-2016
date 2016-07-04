@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            div > div {
+                margin-left: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Form Generation</h1>
+        <script type="text/javascript" src="../node_modules/ajv/dist/ajv.min.js"></script>
+        <script type="text/javascript" src="./index.js"></script>
+        <script>
+            var form = buildForm(document.body, {
+                itemType: 'group',
+                css: 'main-group',
+                formItems: [
+                    {
+                        itemType: 'text',
+                        label: 'First name:', 
+                        listeners: [
+                            { event: 'click', subscriber: function () {
+                                console.log('CLICKED ME!'); 
+                            } }
+                        ]
+                    },
+                    {
+                        itemType: 'input',
+                        name: 'firstName',
+                        css: 'main-input',
+                        listeners: [
+                            { event: 'input', subscriber: function (e) {
+                                console.log('New value: ' + e.target.value);
+                            }}
+                        ]
+                    },
+                    { itemType: 'text', label: 'Last name:' },
+                    { itemType: 'input', name: 'lastName' },
+                    { itemType: 'text', label: 'Recieve post?' },
+                    { itemType: 'checkbox', name: 'receivePost' },
+                    { itemType: 'text', label: 'Address:' },
+                    { 
+                        itemType: 'group',
+                        css: 'address-group',
+                        formItems: [
+                            { itemType: 'text', label: 'Street Address: ' },
+                            { itemType: 'input', name: 'streetAddress' },
+                            { itemType: 'text', label: 'Postcode: ' },
+                            { itemType: 'input', name: 'postCode' },
+                            { itemType: 'text', label: 'Country: ' },
+                            { itemType: 'input', name: 'country' }
+                        ]
+                    }
+                ]
+            });
+        </script>
+    </body>
+</html>
