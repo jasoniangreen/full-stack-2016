@@ -6,7 +6,6 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "positive integer or string of digits",
       "type": "integer",
       "minimum": 1,
       "maximum": 99999999999
@@ -46,7 +45,6 @@
         "properties": {
           "id": {
             "type": "integer",
-            "pattern": "^[1-9][0-9]*$",
             "minimum": 1,
             "maximum": 99999999999
           },

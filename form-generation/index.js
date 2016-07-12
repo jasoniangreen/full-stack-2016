@@ -92,7 +92,7 @@ function processItem(tag, type) {
     return function (data) {
         var newEl = document.createElement(tag);
         if (type) newEl.setAttribute('type', type);
-        if (name) newEl.setAttribute('name', name);
+        if (data.name) newEl.setAttribute('name', data.name);
         if (data.label) newEl.innerHTML = data.label;
         var classList = newEl.classList;
         if (data.css) classList.add.apply(classList, data.css.split(' '));
