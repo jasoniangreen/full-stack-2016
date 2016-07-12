@@ -13,16 +13,22 @@ ajv.addKeyword('idExists', {
 function checkIdExists(schema, data) {
     var base = 'http://jsonplaceholder.typicode.com/';
     var table = schema.table;
+
+    // Must return a promise
     return rp({
         uri: base + table + '/' + data,
         json: true
     })
     .then(function (res) {
-        console.log('--------------------------');
+        // If we get a response and it's id equals our id
+        // then it is valid
+        console.log('------------RESPONSE--------------');
         console.log(table, res);
+        console.log('----------END RESPONSE------------');
         return data === res.id;
     })
     .catch(function (err) {
+        // If it gets a > 400 status, or fails, then it's false
         return false;
     });
 }
@@ -32,7 +38,7 @@ var schema = {
   "properties": {
     "userId": {
       "type": "integer",
-      "idExists": { "table": "users" }
+      "idExists": { "table": "users" } // New keyword is reusable
     },
     "postId": {
       "type": "integer",

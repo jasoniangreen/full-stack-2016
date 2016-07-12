@@ -23,7 +23,6 @@ function getSchema() {
             {
                 "type": "object",
                 "properties": {
-                    "itemType": { "enum": [ "group" ] },
                     "formItems": {
                         "type": "array",
                         "items": {
@@ -106,9 +105,9 @@ function processItem(tag, type) {
     }
 }
 
-function buildForm(el, formSchema) {
+function buildForm(el, formDef) {
     var context = {};
-    var success = buildFunc.call(context, formSchema);
+    var success = buildFunc.call(context, formDef);
     if (success)
         el.appendChild(context.el);
     else
